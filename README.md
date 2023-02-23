@@ -1,7 +1,9 @@
 # Alura Dev Front-End | Respostas dos Desafios
+
 Projeto base para as respostas dos desafios propostos.
 
 ## Iniciando
+
 Crie sua branch com as respostas para os desafios.
 
 ## Organização das pastas
@@ -19,7 +21,7 @@ Para um melhor entendimento irei propor a seguinte organização:
 ```
 
 ## Template
-Nesse projeto já tem um template html usando o Bootstrap para termos um melhor entendimento dos elementos durante os desafios.
+Nesse projeto já tem um template html usando o [Bootstrap](https://getbootstrap.com/) para termos um melhor entendimento dos elementos durante os desafios.
 
 Mas aqui está a base também:
 ```html
@@ -54,4 +56,14 @@ Mas aqui está a base também:
 </html>
 ```
 
-Em alguns desafios de CSS ireimos desativar o Bootstrap.
+Em alguns desafios de CSS ireimos desativar o [Bootstrap](https://getbootstrap.com/).
+
+## Live Preview
+
+Recomendo usar o [VSCode](https://code.visualstudio.com/) junto da extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
+![Live Server](https://github.com/ritwickdey/vscode-live-server/raw/HEAD/images/Screenshot/vscode-live-server-animated-demo.gif)
+
+Caso queiram usar o **IntelliJ IDEA**, encontrei um vídeo que ensina como ativar o preview para HTML, CSS e JS:
+
+[![Live Edit HTML & CSS in 60 Seconds](https://img.youtube.com/vi/xf90Ko64hRc/0.jpg)](https://www.youtube.com/watch?v=xf90Ko64hRc)
