@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Resposta do Desafio - 01</title>
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <style>
+            /* Caso queira algum estilo adicional */
+            #appArea {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                max-width: 800px;
+                min-height: 400px;
+                background-color: #f5f5f5;
+                display: flex;
+                align-items: stretch;
+            }
+
+            .app-content {
+                padding: 1rem;
+            }
+
+            .app-menu {
+                z-index: 999;
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                background-color: brown;
+                min-height: 100%;
+                transition: all .2s;
+
+                max-width: 0px;
+                min-width: 0px;
+            }
+
+            .app-menu.menu-visible {
+                max-width: 9999px;
+                min-width: 200px;
+            }
+
+            .closeMenu {
+                display: inline-block;
+                color: #fff;
+                font-weight: bold;
+                font-size: 12px;
+                text-align: left;
+                padding: 1rem;
+                cursor: pointer;
+            }
+
+            .app-menu-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .app-menu-item {
+                display: block;
+                color: white;
+                font-size: 1rem;
+                padding: .625rem 1rem;
+            }
+            .app-menu-item:hover {
+                background-color: blueviolet;
+            }
+
+            .app-menu-item a {
+                text-decoration: none;
+                color: inherit;
+            }
+        </style>
+
+        <h1>Abrindo e fechando Menu</h1>
+        <p>Acho que todo site quando pensa no mobile tem isso né?</p>
+        <hr>
+
+        <div id="appArea">
+            <nav class="app-menu">
+                <div class="closeMenu menu-toggle-button">❌ Fechar Menu</div>
+                <ul class="app-menu-list">
+                    <li class="app-menu-item"><a href="#">Início</a></li>
+                    <li class="app-menu-item"><a href="#">Blog</a></li>
+                    <li class="app-menu-item"><a href="#">Sobre-nos</a></li>
+                    <li class="app-menu-item"><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="app-content">
+                <h1>Título principal</h1>
+                <p>Lá no item de class <code>.app-menu</code> você pode adicionar a class <code>.menu-visible</code> que criei e mostrar esse menu. O inverso também.</p>
+
+                <button class="openMenu btn btn-primary menu-toggle-button">Abrir Menu</button>
+            </div>
+
+        </div>
+
+        <script>
+            // Código JS aqui
+            const appMenu = document.querySelector(".app-menu");
+            const menuToggleButtons = document.querySelectorAll(".menu-toggle-button");
+
+            menuToggleButtons.forEach(
+                button => button.addEventListener('click', toggleMenu) )
+
+            function toggleMenu() {
+                appMenu.classList.toggle("menu-visible");
+            }
+
+        </script>
+
+    </div>
+</body>
+
+</html>

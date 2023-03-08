@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Resposta do Desafio - 01</title>
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <style>
+            /* Caso queira algum estilo adicional */
+        </style>
+
+        <h1>Tente adivinhar meu número</h1>
+        <p>Quando essa página foi carregada eu já pensei em um numero. Tente adivinhar qual é.</p>
+        <hr>
+
+        <p class="mt-2">Já pensei em um valor entre 1 e 100...</p>
+
+        <div class="input-group mt-3">
+            <span class="input-group-text" id="basic-addon1">Acho que é o número:</span>
+            <input type="number" class="form-control" id="chute">
+        </div>
+        <button class="mt-2 btn btn-primary" id="action">Tentar adivinhar</button>
+
+        <div id="result" class="mt-4">
+        </div>
+
+        <script>
+            // Código JS aqui
+            const button = document.querySelector("#action");
+            button.addEventListener('click', jogar);
+            var computador = sortear();
+
+            function jogar() {
+                let res = document.querySelector("#result");
+                let jogador = parseInt(document.querySelector("#chute").value);
+
+                if( jogador < computador ) {
+                    res.innerHTML += `Você falou ${jogador}. Meu número é MAIOR.`;
+                } else if (jogador > computador) {
+                    res.innerHTML += `Você falou ${jogador}. Meu número é MENOR.`;
+                } else {
+                    res.innerHTML += `Parabéns! Você acertou o numero! Meu numero é ${computador}.`;
+                }
+            }
+
+            function sortear(min = 1, max = 100){
+                let result = parseInt(Math.random() * (max - min) + min);
+                // Math.floor(Math.random() * max) + min
+                console.log(result);
+                return result;
+
+                /* let dif = max - min;
+                let aleatorio = Math.random();
+                let result = min + Math.trunc(dif * aleatorio);
+                console.log( result );
+
+                return result; */
+            };
+
+        </script>
+
+    </div>
+</body>
+
+</html>
