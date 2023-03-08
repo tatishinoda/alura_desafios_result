@@ -39,6 +39,24 @@
 
         <script>
             // Código JS aqui
+            let button = document.querySelector("#action");
+            button.addEventListener('click', maior)
+
+            function maior() {
+                let n1 = parseInt(document.querySelector("#numero-1").value);
+                let n2 = parseInt(document.querySelector("#numero-2").value);
+                let saida = document.querySelector("#saida");
+
+                if( isNaN(n1) || isNaN(n2) ) return alert("Cadê os numeros?");
+
+                if( n1 > n2 ) {
+                    saida.innerHTML = `Analisando os valores ${n1} e ${n2}, o maior valor é ${n1}`
+                } else if ( n1 < n2 ) {
+                    saida.innerHTML = `Analisando os valores ${n1} e ${n2}, o maior valor é ${n2}`
+                } else {
+                    saida.innerHTML = `Analisando os valores ${n1} e ${n2}, os números são iguais.`
+                }
+            }
         </script>
 
     </div>
