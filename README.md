@@ -9,6 +9,7 @@ Crie sua branch com as respostas para os desafios.
 ## Organização das pastas
 
 Para um melhor entendimento irei propor a seguinte organização:
+`tipo de projeto > número do desafio > arquivos`. Mas para entender melhor, aqui está um esquema:
 
 ```
 ► 📁 php
@@ -56,7 +57,7 @@ Mas aqui está a base também:
 </html>
 ```
 
-Em alguns desafios de CSS ireimos desativar o [Bootstrap](https://getbootstrap.com/).
+Note que deixei já separado o lugar de usar CSS, a área de usar o HTML e em seguida o JS. Só precisa usar o que for necessário. Em alguns desafios de CSS ireimos desativar o [Bootstrap](https://getbootstrap.com/).
 
 ## Live Preview
 
