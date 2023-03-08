@@ -26,6 +26,17 @@
 
         <script>
             // Código JS aqui
+            const saida = document.querySelector("#saida");
+            const button = document.querySelector("#botao");
+            button.addEventListener('click', contar);
+
+            function contar() {
+                saida.textContent = '';
+                let limite = 10;
+                for (let index = 1; index <= limite; index++) {
+                    saida.innerHTML += `${index}<br>`;
+                }
+            }
         </script>
 
     </div>
