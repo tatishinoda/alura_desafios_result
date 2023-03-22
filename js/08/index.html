@@ -39,7 +39,15 @@
 
             function listar() {
                 saida.textContent = '';
-                const escolas = ['Programação', 'Front-end', 'Data Science', 'Devops', 'UX & Design', 'Mobile', 'Inovação & Gestão'];
+                const escolas = [
+                    'Programação',
+                    'Front-end',
+                    'Data Science',
+                    'Devops',
+                    'UX & Design',
+                    'Mobile',
+                    'Inovação & Gestão'
+                ];
                 for (let index = 0; index < escolas.length; index++) {
                     saida.innerHTML += `<li class='list-group-item'>${escolas[index]}</li>`;
                 }
