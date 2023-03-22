@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Resposta do Desafio - 01</title>
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <style>
+            .slider {
+                position: relative;
+                height: 500px;
+                overflow: hidden;
+            }
+
+            .slider img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                object-fit: cover;
+            }
+
+            .slider img.active {
+                opacity: 1;
+            }
+        </style>
+
+        <h1>Slide - Sem libs externas!</h1>
+        <p>Um sistema muito simples de Slide pra não quebrar tanto a cabeça.</p>
+        <hr />
+
+        <div class="slider">
+            <img src="https://picsum.photos/500/?random=1" alt="Slide 1" class="active" />
+            <img src="https://picsum.photos/500/?random=2" alt="Slide 2" />
+            <img src="https://picsum.photos/500/?random=3" alt="Slide 3" />
+        </div>
+
+        <div class="d-flex gap-2 mt-3">
+            <button id="prev" class="btn btn-secondary d-block w-100">Anterior slide</button>
+            <button id="next" class="btn btn-primary d-block w-100">Próximo slide</button>
+        </div>
+
+        <script>
+
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(".slider img");
+
+            function changeSlide( action = 'next' ) {
+                slides[slideIndex].classList.remove('active')
+
+                if( action == 'next' ) {
+                    slideIndex = (slideIndex + 1) % slides.length
+                } else {
+                    slideIndex = (slideIndex - 1 + slides.length) % slides.length
+                }
+
+                slides[slideIndex].classList.add('active');
+            }
+
+            let slideAction = setInterval(changeSlide, 3000)
+
+            function actionClick( action = 'next' ) {
+                clearInterval(slideAction)
+                changeSlide( action )
+                slideAction = setInterval(changeSlide, 3000)
+            }
+
+            const next = document.querySelector("#next")
+            next.addEventListener('click', () => actionClick('next'))
+
+            const prev = document.querySelector("#prev")
+            prev.addEventListener('click', () => actionClick('prev'))
+
+        </script>
+
+    </div>
+</body>
+
+</html>
