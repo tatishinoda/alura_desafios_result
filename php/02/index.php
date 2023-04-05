@@ -1,9 +1,6 @@
 <?php
-    $saida = '';
-    $limite = 10;
-    for ($i=1; $i <= $limite; $i++) {
-        $saida .= "$i <br>";
-    }
+    $url = 'https://randomuser.me/api/?results=5';
+    $retorno = json_decode( file_get_contents($url), true );
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -21,7 +18,16 @@
         <p>Quem nunca contou até 10 né?</p>
         <hr>
         <div class="mt-3" id="saida">
-            <?= $saida ?>
+            <ul class="list-group mt-3">
+                <?php foreach( $retorno['results'] as $key => $user ): ?>
+                    <li class="list-group-item" id="<?= $key ?>">
+                        <img src="<?= $user['picture']['medium'] ?>" alt="Photo">
+                        <h5><?= $user['name']['first'] . ' ' . $user['name']['last'] ?></h5>
+                        <p class="m-0">Cidade: <?= $user['location']['city'] ?></p>
+                        <p class="m-0">E-mail: <?= $user['email'] ?></p>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </div>
 
